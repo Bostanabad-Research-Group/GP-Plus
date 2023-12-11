@@ -1,2 +1,2 @@
 # GP+
-Python Library for Generalized Gaussian Process Modeling
+Python Library for Generalized Gaussian Process Modeling,
