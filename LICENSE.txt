@@ -1,15 +1,1 @@
-MIT License
 
-All individuals who obtain a copy of this "GP+" software,
-including any associated documentation files (the "Software"),
-are permitted to interact with and utilize the Software freely.
-This encompasses the unrestricted right to employ, replicate,
-alter, blend, disclose, disseminate, sublicense, and even sell the Software.
-
-THE SOFTWARE IS SUPPLIED "AS IS", WITHOUT ANY FORM OF WARRANTY, 
-EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, SUITABILITY FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
-UNDER NO CIRCUMSTANCES SHALL THE CREATORS OR COPYRIGHT OWNERS BE HELD LIABLE 
-FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITIES, WHETHER IN AN ACTION OF CONTRACT, 
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN ANY WAY CONNECTED WITH THE SOFTWARE
-OR THE USE OR OTHER DEALINGS WITH THE SOFTWARE.
