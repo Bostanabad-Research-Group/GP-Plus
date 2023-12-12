@@ -1,6 +1,5 @@
 # GP+
 ---
-[![Test Suite](https://github.com/cornellius-gp/gpytorch/actions/workflows/run_test_suite.yml/badge.svg)](https://github.com/cornellius-gp/gpytorch/actions/workflows/run_test_suite.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
