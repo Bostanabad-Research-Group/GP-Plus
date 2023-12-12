@@ -15,7 +15,7 @@ Python Library for Generalized Gaussian Process Modeling,
 - Python >= 3.7
 - PyTorch >= 1.11
 
-Install GPyTorch using pip:
+Install GP+ using pip:
 
 ```bash
 pip install GP-Plus-functions
