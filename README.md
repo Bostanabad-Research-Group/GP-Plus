@@ -19,6 +19,7 @@ Install GPyTorch using pip:
 
 ```bash
 pip install GP-Plus-functions
+```
 
 ## Citing Us
 
