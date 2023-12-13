@@ -18,7 +18,7 @@ Python Library for Generalized Gaussian Process Modeling,
 Install GP+ using pip:
 
 ```bash
-pip install GP_Plus_functions
+pip install gpplus
 ```
 ## Citing Us
 
