@@ -21,7 +21,7 @@ Install GP+ using pip:
 pip install gpplus
 ```
 ## Citing Us
-
+Please cite
 
 ## The Team
 
