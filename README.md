@@ -13,7 +13,8 @@ Python Library for Generalized Gaussian Process Modeling,
 
 **Requirements**:
 - Python >= 3.8
-- PyTorch >= 1.11
+- PyTorch >= 1.13.1
+- CUDA 11.8
 
 Install GP+ using pip:
 
