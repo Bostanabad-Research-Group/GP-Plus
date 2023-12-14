@@ -24,10 +24,7 @@ pip install gpplus
 Here is a quick rundown of the main components of the multi-fidelity BO loop for Borehole example.
   1. Importing required packages
 ```python
-from lmgp_pytorch.test_functions.physical import Borehole_MF
-from lmgp_pytorch.utils import set_seed
-from lmgp_pytorch.preprocessing.normalizeX import standard
-from lmgp_pytorch.bayesian_optimizations.BO_GP_plus import BO, Visualize_BO
+import ...
 ```
   2. Define the problem-specific parameters: Here we define the index of categorical variables and lower and upper bounds of the problem for optimization
 ```python
@@ -42,7 +39,7 @@ costs = {'0': 1000, '1': 100, '2': 10, '3':100, '4':10}
 ```
   4. Generation data and standardization
 ```python
-U_init, y_init = Borehole_MF(True,n_train_init)           
+U_init, y_init = Borehole_MF_BO(True,n_train_init)           
 U_init,umean, ustd = standard(U_init,qual_index)
 ```
   5. Starting BO loop: All the components of BO, including emulator and acquisition functions are embedded in the BO function. Lots of options are defined as the inputs of BO function to enable flexible optimization. These options are detailed in the paper.
