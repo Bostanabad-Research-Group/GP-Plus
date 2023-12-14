@@ -20,10 +20,6 @@ Install GP+ using pip:
 ```bash
 pip install gpplus
 ```
-
-```bash
-pip install gpplus
-```
 ## Emulation  
 Begin with a simple emulation scenario using GP+. This example uses the borehole function for demonstration purposes.
 ```bash
