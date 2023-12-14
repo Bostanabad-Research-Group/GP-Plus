@@ -45,5 +45,4 @@ Yousefpour, Amin; Zanjani Foumani, Zahra; Shishehbor, Mehdi; Mora, Carlos; Bosta
 
 
 ## Assistance and Support
-
-Should you require help with the GP+ software package, feel free to open an issue on our Github Issues page. When creating an issue, please use relevant labels to specify the particular module or aspect of GP+ your inquiry pertains to. 
+Need help with GP+? Feel free to open an issue on our GitHub page and label it according to the module or feature in question for quicker assistance.
