@@ -21,9 +21,6 @@ Install GP+ using pip:
 ```bash
 pip install gpplus
 ```
-## Emulation  
-
-
 
 ## More About GP+
 
