@@ -134,8 +134,8 @@ Visualize_BO(bestf,cost)
 
 ## The Team
 Amin Yousefpour\
-Zahra Zanjani Foumani
-Mehdi Shishehbor
-Carlos Mora 
-Ramin Bostanabad
+Zahra Zanjani Foumani\
+Mehdi Shishehbor\
+Carlos Mora\
+Ramin Bostanabad\
 
