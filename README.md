@@ -42,7 +42,7 @@ costs = {'0': 1000, '1': 100, '2': 10, '3':100, '4':10}
 U_init, y_init = Borehole_MF_BO(True,n_train_init)           
 U_init,umean, ustd = standard(U_init,qual_index)
 ```
-  5. Starting BO loop: All the components of BO, including emulator and acquisition functions are embedded in the BO function. Lots of options are defined as the inputs of BO function to enable flexible optimization. These options are detailed in the paper.
+  5. Starting BO loop: All the components of BO, including emulator and acquisition functions are embedded in the BO function. Lots of options are defined as the inputs of BO function to enable flexible optimization. These options are detailed in the paper. Here, we stick to the default setting.
 ```python
 bestf, cost = BO(U_init,y_init,costs,l_bound,u_bound,umean,ustd,qual_index,Borehole_MF)
 ```
