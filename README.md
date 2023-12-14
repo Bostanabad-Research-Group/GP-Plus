@@ -27,7 +27,7 @@ pip install gpplus
 
 ## More About PyTorch
 
-GP+ is an open-source library for kernel-based learning via Gaussian processes (GPs). \gp~is built on PyTorch and provides a user-friendly and object-oriented tool for probabilistic learning and inference. 
+GP+ is an open-source library for kernel-based learning via Gaussian processes (GPs). behind its powerful emulation, GP+ systematically integrates nonlinear manifold learning techniques with GPs for multi-fidelity modeling, calibration of computer models, and Bayesian optimization.  GP+ is built on PyTorch and provides a user-friendly and object-oriented tool for probabilistic learning and inference. 
 
 ## Citing Us
 
