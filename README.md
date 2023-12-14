@@ -91,14 +91,6 @@ model.score(Xtest, ytest, plot_MSE=True, title='Multiple Noise & Mixed Base', se
 model.visualize_latent(type='MF')
 ```
 
-## Bayesian Optimization (BO)
-Here is a quick rundown of the main components of the multi-fidelity BO loop for Borehole example.
-  1. Define the problem-specific parameters: Here we define the index of categorical variables, and lower and upper bounds of the problem for optimization
-```python
-qual_index={8:5}
-l_bound = [100,990, 700,100,0.05,10,1000,6000]            
-u_bound = [1000,1110,820,10000,0.15,500,2000,12000]
-```
 
 
 ## Bayesian Optimization (BO)
