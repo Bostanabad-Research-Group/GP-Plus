@@ -105,7 +105,10 @@ u_bound = [1000,1110,820,10000,0.15,500,2000,12000]
 Here is a quick rundown of the main components of the multi-fidelity BO loop for Borehole example.
   1. Importing required packages
 ```python
-import ...
+from gpplus.test_functions.multi_fidelity import Borehole_MF_BO
+from gpplus.utils import set_seed
+from gpplus.preprocessing.normalizeX import standard
+from gpplus.bayesian_optimizations.BO_GP_plus import BO, Visualize_BO
 ```
   2. Define the problem-specific parameters: Here we define the index of categorical variables and lower and upper bounds of the problem for optimization
 ```python
