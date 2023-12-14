@@ -37,7 +37,7 @@ u_bound = [1000,1110,820,10000,0.15,500,2000,12000]
 n_train_init = {'0': 5, '1': 5, '2': 50, '3': 5, '4': 50}
 costs = {'0': 1000, '1': 100, '2': 10, '3':100, '4':10} 
 ```
-  4. Generation data and standardization
+  4. Data generation and standardization
 ```python
 U_init, y_init = Borehole_MF_BO(True,n_train_init)           
 U_init,umean, ustd = standard(U_init,qual_index)
