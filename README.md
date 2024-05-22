@@ -15,9 +15,7 @@ Python Library for Generalized Gaussian Process Modeling
 - Python == 3.9
 - CUDA >= 11.6 (if using GPU)
 
-**PyTorch Installation**:
-
-To use this project, you need to install specific versions of PyTorch and related libraries. Follow the appropriate steps below based on your system's configuration.
+To use GP+, you first need to install the following specific versions of PyTorch:
 
 ### For GPU Support (with CUDA)
 If you have a compatible GPU and want to leverage GPU acceleration, install PyTorch with CUDA support:
@@ -33,12 +31,12 @@ If you do not have a compatible GPU, install the CPU-only version of PyTorch:
 pip install torch==1.13.1+cpu torchvision==0.14.1+cpu torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 
-**Install GP+ using pip**:
+### Install GP+ using pip
+Once you have installed the appropriate version of PyTorch, install GP+ using pip:
 
 ```bash
 pip install gpplus
 ```
-
 ## More About GP+
 
 GP+ is an open-source library for kernel-based learning via Gaussian processes (GPs). It systematically integrates nonlinear manifold learning techniques with GPs for single and multi-fidelity emulation, calibration of computer models, sensitivity analysis, and Bayesian optimization. GP+ is built on PyTorch and provides a user-friendly and object-oriented tool for probabilistic learning and inference. 
