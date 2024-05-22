@@ -12,14 +12,28 @@ Python Library for Generalized Gaussian Process Modeling
 ## Installation
 
 **Requirements**:
-- Python = 3.9
-- CUDA >= 11.6
-- PyTorch >= 1.13.1 :\
-  (pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116)\
-# CPU only
-pip install torch==1.13.1+cpu torchvision==0.14.1+cpu torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cpu
+- Python == 3.9
+- CUDA >= 11.6 (if using GPU)
 
-Install GP+ using pip:
+**PyTorch Installation**:
+
+To use this project, you need to install specific versions of PyTorch and related libraries. Follow the appropriate steps below based on your system's configuration.
+
+### For GPU Support (with CUDA)
+If you have a compatible GPU and want to leverage GPU acceleration, install PyTorch with CUDA support:
+
+```bash
+pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
+```
+
+### For CPU Only
+If you do not have a compatible GPU, install the CPU-only version of PyTorch:
+
+```bash
+pip install torch==1.13.1+cpu torchvision==0.14.1+cpu torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+**Install GP+ using pip**:
 
 ```bash
 pip install gpplus
