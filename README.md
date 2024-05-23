@@ -17,7 +17,7 @@ Python Library for Generalized Gaussian Process Modeling
 
 To use GP+, you first need to install the specific versions of PyTorch. The installation process involves two steps: (1) installing the specific version of PyTorch based on your system, and (2) installing GP+.
 
-## (1) Installation of PyTorch
+## (1) Install PyTorch
 
 ### For macOS
 To install PyTorch for macOS, use:
