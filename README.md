@@ -69,7 +69,7 @@ Ramin Bostanabad
 ## Citing Us
 To reference GP+ in your academic work, please use the following citation, now available on arXiv:
 
-Yousefpour, Amin; Zanjani Foumani, Zahra; Shishehbor, Mehdi; Mora, Carlos; Bostanabad, Ramin. "Advances in Engineering Software (2024)." "GP+: A Python Library for Kernel-based Learning via Gaussian Processes." https://doi.org/10.1016/j.advengsoft.2024.103686.
+Yousefpour, Amin; Zanjani Foumani, Zahra; Shishehbor, Mehdi; Mora, Carlos; Bostanabad, Ramin. "GP+: A Python Library for Kernel-based Learning via Gaussian Processes." Advances in Engineering Software (2024). https://doi.org/10.1016/j.advengsoft.2024.103686.
 
 
 
