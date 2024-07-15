@@ -992,13 +992,18 @@ class GP_Plus(GPR):
         return draws
 
     def get_latent_space(self):
+        positions=[]
         if len(self.qual_dict_list) > 0:
-            zeta = torch.tensor(self.zeta, dtype = torch.float64).to(**self.tkwargs)
-            positions = self.nn_model(zeta)
-            return positions.detach()
+            for i in range(len(self.qual_kernel_columns)):
+                zeta = self.zeta[i]
+                A = getattr(self,'A_matrix')
+                positions.append(A[i](x=zeta.float().to(**self.tkwargs)).detach())
+            return positions
         else:
             print('No categorical Variable, No latent positions')
             return None
+
+        
 
 
 
