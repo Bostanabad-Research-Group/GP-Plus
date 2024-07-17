@@ -763,7 +763,7 @@ class GP_Plus(GPR):
     #         plt.title(title, fontsize = 15, loc="center")
     #         plt.legend()
     #         plt.show()
-    def plot_xy_print_params(self, Xtest, ytest, Xtrain, ytrain, model, label_test='$Exact$', 
+    def plot_1d(self, Xtest, ytest, Xtrain, ytrain, model, label_test='$Exact$', 
                          label_prediction='Predicted', Train_label='Training data', 
                          xlabel='x', ylabel='y', ax=None, x_lower=None, x_upper=None, 
                          y_lower=None, y_upper=None):
