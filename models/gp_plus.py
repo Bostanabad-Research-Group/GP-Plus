@@ -739,30 +739,6 @@ class GP_Plus(GPR):
         plt.title('Input: ' + str(var_input) + ' versus Output')
         plt.legend()
         plt.show()
-
-    # def plot_xy_print_params(self, Xtest, ytest, Xtrain, ytrain, model):
-    #         Xtest=data_type_check(Xtest)
-    #         ytest=data_type_check(ytest)
-    #         ytest=ytest.reshape(-1).to(self.tkwargs['device'])
-    #         Xtest=Xtest.to(self.tkwargs['device'])
-    #         Xtest, indices = torch.sort(Xtest, dim = 0)
-    #         ytest = ytest[indices]
-
-    #         mean_pred, std_pred = model.predict(Xtest.to(**self.tkwargs), return_std=True)
-    #         confidence_interval = 1.96 * std_pred
-
-    #         plt.rcParams.update({'font.size': 14})
-    #         plt.scatter(Xtrain, ytrain, marker='x', color='red')
-    #         plt.plot(Xtest, ytest,color='black', linewidth=4.0, label='Exact')
-    #         plt.plot(Xtest, mean_pred.cpu(), color='green', linestyle='dashed', linewidth=4.0, label = 'Predicted')
-    #         plt.fill_between(Xtest.squeeze(), mean_pred.cpu() - confidence_interval.cpu(), mean_pred.cpu() + confidence_interval.cpu(), color='lightblue', alpha=0.7, label='95% CI')
-    #         plt.scatter(Xtrain, ytrain, s=100, marker='x', color='red', label='Training data')
-    #         plt.xlabel(r'$x$')
-    #         plt.ylabel(r'$y$')
-    #         title = r"$\hat{\beta}$ = " + f"{model.mean_module.constant.item():.3f}" + r", $\hat{\omega}$ = " + f"{model.covar_module.m_gp_kernel.raw_lengthscale.data.item():.3e}"+ r", $\hat{\delta}$ = " + f"{model.noise_value().item():.3e}"
-    #         plt.title(title, fontsize = 15, loc="center")
-    #         plt.legend()
-    #         plt.show()
     def plot_1d(self, Xtest, ytest, Xtrain, ytrain, model, label_test='$Exact$', 
                          label_prediction='Predicted', Train_label='Training data', 
                          xlabel='x', ylabel='y', ax=None, x_lower=None, x_upper=None, 
