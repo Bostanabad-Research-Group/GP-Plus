@@ -1,0 +1,104 @@
+site_name: GPPlus
+
+theme:
+  name: material
+  features:
+    - navigation.sections  # Sections are included in the navigation on the left.
+    - toc.integrate # Table of contents integrated to the left
+    - header.autohide # Hide header on scrolling
+  palette:
+    - media: "(prefers-color-scheme: light)" # get system preference
+      primary: black
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" # get system preference
+      primary: black
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github  # GitHub logo in top right
+  logo: imgs/favicon.png
+  favicon: "imgs/favicon.png"
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Bostanabad-Research-Group
+
+markdown_extensions:
+  - toc:
+      permalink: "¤"  # Adds a clickable permalink to each section heading
+      toc_depth: 4
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - autorefs
+  - mkdocs-jupyter
+  - include-markdown:
+      include:
+        - 'CONTRIBUTING.md'
+  - mkdocstrings:
+      handlers:
+        python:
+          #docstring_style: "google"  # or "numpy" or "sphinx"
+          options:
+            docstring_style: "google"
+            inherited_members: true  # Allow looking up inherited methods
+            show_root_heading: true  # actually display anything at all...
+            show_root_full_path: true  # display "diffrax.asdf" not just "asdf"
+            show_if_no_docstring: true
+            show_signature_annotations: true
+            show_signature: true
+            separate_signature: false
+            show_docstring_examples: true
+            show_docstring_parameters: true
+            show_docstring_attributes: true
+            show_docstring_returns: true
+            show_docstring_raises: true
+            show_source: true  # don't include source code
+            show_bases: true
+            show_inheritance: true
+            show_private_members: false
+            show_inherited_members: false
+            show_special_members: false
+            members_order: source  # order methods according to their order of definition in the source code, not alphabetical order
+            heading_level: 4
+            show_symbol_type_heading: true
+            #members: true
+            #filters:
+            #  - "!^__"
+            #  - "!^import"
+            #  - "!^_"
+
+nav:
+  - Welcome to GPPlus: "index.md"
+  - Installing GPPlus: "installing.md"
+  - Examples:
+    - Basic:
+      - GP Regression: examples/basic/basic_gp_regression.ipynb
+  - API Reference:
+    - Means:
+      - Advanced: reference/means/advanced.md
+    - Kernels:
+      - Unconstrained: reference/kernels/unconstrained.md
+      - Advanced: reference/kernels/advanced.md
+      - Kronecker: reference/kernels/kronecker.md
+    - Models:
+      - Base: reference/models/base.md
+    - Training:
+      - Trainer: reference/training/trainer.md
+      - Eval: reference/training/eval.md
+    - Priors: reference/priors/priors.md
+  - GPPlus Developer's Guide:
+    - Developer setup: "developerguide/setup.md"
+    - Contributing: "developerguide/CONTRIBUTING.md"
+
+repo_url: https://github.com/Bostanabad-Research-Group/GP-Plus
+
+copyright: Copyright &copy; 2025 Bostanabad Research Group

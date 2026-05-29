@@ -1,0 +1,7 @@
+gpytorch==1.14
+joblib==1.4.2
+linear_operator==0.6
+matplotlib==3.10.1
+numpy==2.2.4
+torch==2.5.1
+tqdm==4.67.1
