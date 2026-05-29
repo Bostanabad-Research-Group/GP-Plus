@@ -14,12 +14,14 @@
 # software constitutes an implicit agreement to these terms. These terms and conditions 
 # are subject to change at any time without prior notice.
 
-import numpy as np
 import io
 from collections import OrderedDict
-from typing import Optional,Union,List,Tuple,Dict,Callable
+from typing import Callable, Dict, List, Optional, Tuple, Union
 
-from .variables import Variable,NumericalVariable,CategoricalVariable,IntegerVariable
+import numpy as np
+
+from .variables import CategoricalVariable, IntegerVariable, NumericalVariable, Variable
+
 
 class InputSpace(object):
     '''

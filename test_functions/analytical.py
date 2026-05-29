@@ -1,6 +1,7 @@
 import numpy as np
-from scipy.stats.qmc import Sobol, scale
 from gpplus.preprocessing import setlevels
+from scipy.stats.qmc import Sobol, scale
+
 
 ####################################Wing Function################################################
 def wing(n=100, X = None, noise_std = 0.0, random_state = None, shuffle = True):

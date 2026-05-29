@@ -1,2 +1,1 @@
-from . import AFs
-from . import BO_GP_plus
+from . import AFs, BO_GP_plus

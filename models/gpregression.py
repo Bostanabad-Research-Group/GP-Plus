@@ -12,27 +12,28 @@
 # The act of downloading or executing any segment of this software inherently signifies compliance with these terms. 
 # The developers reserve the right to modify these terms and conditions without prior intimation at any juncture.
 
-import torch
-import gpytorch
 import math
-from gpytorch.models import ExactGP
-from gpytorch import settings as gptsettings
-from gpytorch.priors import NormalPrior,LogNormalPrior
-from gpytorch.constraints import GreaterThan,Positive
-from gpytorch.distributions import MultivariateNormal
-from .. import kernels
-from ..priors import LogHalfHorseshoePrior,MollifiedUniformPrior
-from ..utils.transforms import softplus,inv_softplus
-from typing import List,Tuple,Union
-from gpplus.likelihoods_noise.multifidelity import Multifidelity_likelihood
-from botorch.models.utils import gpt_posterior_settings
-from botorch.posteriors.gpytorch import GPyTorchPosterior
-from botorch.models.gpytorch import BatchedMultiOutputGPyTorchModel, GPyTorchModel
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+import gpytorch
+import torch
 from botorch import settings
-from botorch.models.utils import fantasize as fantasize_flag, validate_input_scaling
+from botorch.models.gpytorch import BatchedMultiOutputGPyTorchModel, GPyTorchModel
+from botorch.models.utils import fantasize as fantasize_flag
+from botorch.models.utils import gpt_posterior_settings, validate_input_scaling
+from botorch.posteriors.gpytorch import GPyTorchPosterior
 from botorch.sampling.samplers import MCSampler
+from gpplus.likelihoods_noise.multifidelity import Multifidelity_likelihood
+from gpytorch import settings as gptsettings
+from gpytorch.constraints import GreaterThan, Positive
+from gpytorch.distributions import MultivariateNormal
+from gpytorch.models import ExactGP
+from gpytorch.priors import LogNormalPrior, NormalPrior
 from torch import Tensor
-from typing import Any, Dict, List, Optional, Union
+
+from .. import kernels
+from ..priors import LogHalfHorseshoePrior, MollifiedUniformPrior
+from ..utils.transforms import inv_softplus, softplus
 
 
 class GPR(ExactGP, GPyTorchModel):

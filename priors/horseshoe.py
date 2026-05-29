@@ -15,11 +15,13 @@
 # are subject to change at any time without prior notice.
 
 import math
+from numbers import Number
+
 import torch
 from gpytorch.priors import Prior
-from torch.distributions import HalfCauchy,HalfNormal,constraints
+from torch.distributions import HalfCauchy, HalfNormal, constraints
 from torch.distributions.utils import broadcast_all
-from numbers import Number
+
 
 class LogHalfHorseshoePrior(Prior):
     """Prior for the log-noise variance hyperparameter for GPs. 

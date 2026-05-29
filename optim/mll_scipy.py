@@ -12,23 +12,22 @@
 # The act of downloading or executing any segment of this software inherently signifies compliance with these terms. 
 # The developers reserve the right to modify these terms and conditions without prior intimation at any juncture.
 
-import torch
-import numpy as np
-from gpytorch import settings as gptsettings
-from gpytorch.utils.errors import NanError,NotPSDError
-from scipy.optimize import minimize,OptimizeResult
 from collections import OrderedDict
-from functools import reduce
-from joblib import Parallel,delayed
-from joblib.externals.loky import set_loky_pickler
-from typing import Dict,List,Tuple,Optional,Union
 from copy import deepcopy
-from scipy.optimize import Bounds
-from scipy.optimize import NonlinearConstraint
-from scipy.optimize import BFGS
-#######################################################
+from functools import reduce
+from typing import Dict, List, Optional, Tuple, Union
 
+import numpy as np
+import torch
+
+#######################################################
 from gpplus.utils.interval_score import interval_score_function
+from gpytorch import settings as gptsettings
+from gpytorch.utils.errors import NanError, NotPSDError
+from joblib import Parallel, delayed
+from joblib.externals.loky import set_loky_pickler
+from scipy.optimize import BFGS, Bounds, NonlinearConstraint, OptimizeResult, minimize
+
 tkwargs = {
     "dtype": torch.float,
     "device": torch.device("cpu" if torch.cuda.is_available() else "cpu"),

@@ -15,11 +15,13 @@
 # are subject to change at any time without prior notice.
 
 import math
+from numbers import Number
+
 import torch
 from gpytorch.priors import Prior
-from torch.distributions import constraints,Uniform,Normal
+from torch.distributions import Normal, Uniform, constraints
 from torch.distributions.utils import broadcast_all
-from numbers import Number
+
 
 class MollifiedUniformPrior(Prior):
     r"""Uniform distribution that is differentiable everywhere 

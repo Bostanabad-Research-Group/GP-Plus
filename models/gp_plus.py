@@ -11,35 +11,33 @@
 # Being academic research software, GP+ is provided on an "as is" m_gp, devoid of warranties, whether explicit or implicit. 
 # The act of downloading or executing any segment of this software inherently signifies compliance with these terms. 
 # The developers reserve the right to modify these terms and conditions without prior intimation at any juncture.
-import numpy as np
-from typing import Dict,List,Optional
 import math
-from scipy.stats import norm
-import matplotlib.pyplot as plt
-from tabulate import tabulate
-import sobol_seq
 import warnings
-
-import torch
-from torch import nn
-from torch import Tensor 
-from torch.nn.parameter import Parameter
-from torch.nn import init
-import torch.nn.functional as F 
+from typing import Dict, List, Optional
 
 import gpytorch
+import matplotlib.pyplot as plt
+import numpy as np
+import sobol_seq
+import torch
+import torch.nn.functional as F
+from gpplus.models.gpregression import GPR
+from gpplus.optim import fit_model_continuation, fit_model_scipy, fit_model_torch
+from gpplus.preprocessing import setlevels
+from gpplus.visual.plot_latenth import plot_sep
 from gpytorch.constraints import Positive
+from gpytorch.distributions import MultivariateNormal
 from gpytorch.means import Mean
 from gpytorch.priors import NormalPrior
-from gpytorch.distributions import MultivariateNormal
+from scipy.stats import norm
+from tabulate import tabulate
+from torch import Tensor, nn
+from torch.nn import init
+from torch.nn.parameter import Parameter
 
-from gpplus.visual.plot_latenth import plot_sep
-from gpplus.models.gpregression import GPR
 from gpplus import kernels
 from gpplus.priors import MollifiedUniformPrior
-from gpplus.preprocessing import setlevels
-from gpplus.utils import set_seed, data_type_check
-from gpplus.optim import fit_model_scipy, fit_model_continuation, fit_model_torch
+from gpplus.utils import data_type_check, set_seed
 
 
 class GP_Plus(GPR):

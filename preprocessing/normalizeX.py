@@ -1,8 +1,8 @@
 
-import numpy as np
-import torch
 import warnings
 
+import numpy as np
+import torch
 
 
 def standard(Xtrain, qual_index, Xtest = None):

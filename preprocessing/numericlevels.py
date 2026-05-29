@@ -1,6 +1,8 @@
-import torch
 import numpy as np
+import torch
+
 from gpplus.utils import data_type_check
+
 
 def setlevels(X, qual_index = None, return_label = False):
     labels = []

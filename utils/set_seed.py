@@ -1,6 +1,8 @@
-import torch
-import numpy as np
 import random
+
+import numpy as np
+import torch
+
 # Set the seed for reproducibility
 
 def set_seed(seed):

@@ -1,7 +1,8 @@
-from gpytorch.kernels import RBFKernel
-from gpytorch.functions import RBFCovariance
-from gpytorch.settings import trace_mode
 import torch
+from gpytorch.functions import RBFCovariance
+from gpytorch.kernels import RBFKernel
+from gpytorch.settings import trace_mode
+
 
 def postprocess_rbf(dist_mat):
     return dist_mat.div_(-1).exp_()

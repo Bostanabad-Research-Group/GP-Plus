@@ -4,10 +4,10 @@
 #
 
 from turtle import color
-import numpy as np
-import matplotlib.pyplot as plt
-import torch
 
+import matplotlib.pyplot as plt
+import numpy as np
+import torch
 
 tkwargs = {
     "dtype": torch.double,

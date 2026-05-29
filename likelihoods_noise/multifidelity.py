@@ -14,14 +14,16 @@
 
 from distutils.log import error
 from turtle import forward
+from typing import Any, Optional
+
+import torch
+from gpytorch.distributions import MultivariateNormal
+from gpytorch.lazy import ConstantDiagLazyTensor, DiagLazyTensor
 from gpytorch.likelihoods import _GaussianLikelihoodBase
 from gpytorch.likelihoods.noise_models import _HomoskedasticNoiseBase
 from sklearn.covariance import log_likelihood
-import torch
-from typing import Any, Optional
-from gpytorch.distributions import MultivariateNormal
-from gpytorch.lazy import DiagLazyTensor, ConstantDiagLazyTensor
 from torch import Tensor
+
 
 class Multifidelity_likelihood(_GaussianLikelihoodBase):
 

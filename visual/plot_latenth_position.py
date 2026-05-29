@@ -3,9 +3,10 @@
 #
 #
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import torch
+
 
 def plot_ls(model, constraints_flag = True):
     # 

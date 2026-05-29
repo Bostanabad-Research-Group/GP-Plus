@@ -1,5 +1,7 @@
-import torch
 import numpy as np
+import torch
+
+
 def data_type_check(data):
     if isinstance(data, torch.Tensor):
         return data

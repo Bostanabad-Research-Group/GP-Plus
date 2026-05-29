@@ -1,5 +1,5 @@
 import numpy as np
-import torch 
+import torch
 
 
 def interval_score_function(Yu, Yl, Y, alpha = 0.05):

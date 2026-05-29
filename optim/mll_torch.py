@@ -12,13 +12,15 @@
 # The act of downloading or executing any segment of this software inherently signifies compliance with these terms. 
 # The developers reserve the right to modify these terms and conditions without prior intimation at any juncture.
 
-import torch
 import math
-from gpytorch.mlls import ExactMarginalLogLikelihood
-from typing import Dict,List,Optional
 from copy import deepcopy
-from tqdm import tqdm
+from typing import Dict, List, Optional
+
 import numpy as np
+import torch
+from gpytorch.mlls import ExactMarginalLogLikelihood
+from tqdm import tqdm
+
 
 def get_bounds(likobj, theta):
 

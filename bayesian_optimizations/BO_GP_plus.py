@@ -1,13 +1,14 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import torch
-from gpplus.models import GP_Plus
+from gpplus.bayesian_optimizations.AFs import AF_HF, AF_LF, AF_HF_Engineering, AF_LF_Engineering
 from gpplus.optim import fit_model_scipy
 from joblib import Parallel, delayed
 from joblib.externals.loky import set_loky_pickler
-from gpplus.bayesian_optimizations.AFs import AF_HF,AF_LF, AF_HF_Engineering,AF_LF_Engineering
-import matplotlib.pyplot as plt
 
-    
+from gpplus.models import GP_Plus
+
+
 def BO(Xtrain=None,
         ytrain=None,
         costs=None,
@@ -56,8 +57,8 @@ def BO(Xtrain=None,
     
     
     def run_scipy(EI, best_f, bound, model,xmean,xstd,cost_fun, fidelity,l_bound,u_bound):
-        import torch
         import numpy as np
+        import torch
         from scipy.optimize import minimize
         random_seed = np.random.choice(range(0,1000), size=12, replace=False)
         def run(EI, best_f, bound, model,xmean,xstd,cost_fun,k, fidelity,l_bound_h,u_bound_h):

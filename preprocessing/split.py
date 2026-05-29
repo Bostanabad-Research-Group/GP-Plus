@@ -1,8 +1,9 @@
-from gpplus.preprocessing import standard 
-from gpplus.preprocessing import setlevels
-from sklearn.model_selection import train_test_split
-import torch
 import warnings
+
+import torch
+from gpplus.preprocessing import setlevels, standard
+from sklearn.model_selection import train_test_split
+
 
 def train_test_split_normalizeX(
     X,

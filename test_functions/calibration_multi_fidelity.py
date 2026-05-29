@@ -1,11 +1,11 @@
+import math
 from multiprocessing.sharedctypes import Value
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
+import torch
 from pyro import param
 from scipy.stats.qmc import Sobol, scale
-import math
-import torch
-
 
 
 ################################################################################################

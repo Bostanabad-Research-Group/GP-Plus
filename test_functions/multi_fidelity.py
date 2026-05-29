@@ -1,8 +1,10 @@
-import numpy as np
-from scipy.stats.qmc import Sobol, scale
 import math
+
+import numpy as np
 import torch
 from pyDOE import lhs
+from scipy.stats.qmc import Sobol, scale
+
 
 ################################## Wing #########################################
 def wing(n=100, X = None, 

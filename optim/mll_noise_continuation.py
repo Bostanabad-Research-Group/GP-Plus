@@ -14,16 +14,19 @@
 
 
 import math
+from copy import deepcopy
+from typing import Dict, Tuple
+from warnings import catch_warnings, simplefilter
+
 import numpy as np
 import torch
-from warnings import simplefilter,catch_warnings
 from gpytorch import settings as gptsettings
 from gpytorch.utils.warnings import GPInputWarning
 from scipy.spatial import distance_matrix
-from .mll_scipy import fit_model_scipy
+
 from ..models import GPR
-from copy import deepcopy
-from typing import Tuple,Dict
+from .mll_scipy import fit_model_scipy
+
 
 def loocv_rrmse(model:GPR):
     # generate prediction caches (using predictions)

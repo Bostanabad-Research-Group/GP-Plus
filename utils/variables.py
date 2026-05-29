@@ -14,9 +14,11 @@
 # software constitutes an implicit agreement to these terms. These terms and conditions 
 # are subject to change at any time without prior notice.
 
-import numpy as np
 import io
-from typing import Optional,Union,List,Tuple,Callable
+from typing import Callable, List, Optional, Tuple, Union
+
+import numpy as np
+
 
 class Variable(object):
     def __init__(self,name:str) -> None:

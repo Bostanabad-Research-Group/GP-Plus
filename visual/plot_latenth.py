@@ -1,7 +1,7 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import torch
 import matplotlib.cm as cm
+import matplotlib.pyplot as plt
+import numpy as np
+import torch
 
 
 def plot_sep(type ,positions, levels, perm, constraints_flag = True, suptitle= None):
