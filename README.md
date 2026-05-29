@@ -33,6 +33,18 @@ import gpplus  # or the appropriate module name
 
 We welcome contributions from the community! Please, check our [contributing guideline](CONTRIBUTING.md).
 
+## More About GP+
+
+GP+ is an open-source library for kernel-based learning via Gaussian processes (GPs). It systematically integrates nonlinear manifold learning techniques with GPs for single and multi-fidelity emulation, calibration of computer models, sensitivity analysis, and Bayesian optimization. GP+ is built on PyTorch and provides a user-friendly and object-oriented tool for probabilistic learning and inference. 
+
+For more detailed information, refer to our paper: ["GP+: A Python Library for Kernel-based Learning via Gaussian Processes"](https://www.sciencedirect.com/science/article/pii/S0965997824000930?dgcid=author).
+
+## Citing Us
+If you use GP+ in your work, please use the following citation:
+```
+Yousefpour, Amin; Zanjani Foumani, Zahra; Shishehbor, Mehdi; Mora, Carlos; Bostanabad, Ramin. "GP+: A Python Library for Kernel-based Learning via Gaussian Processes." Advances in Engineering Software (2024). https://doi.org/10.1016/j.advengsoft.2024.103686.
+```
+
 ## License
 
 MIT License
