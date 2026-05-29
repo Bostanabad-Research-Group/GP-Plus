@@ -1,0 +1,32 @@
+name: Feature Request
+description: Request new or improved functionality or changes to existing GPPlus functionality.
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request for GPPlus functionality!
+        - By submitting this issue, you agree to follow our [Contributing guide](https://github.com/Bostanabad-Research-Group/GP-Plus/blob/main/CONTRIBUTING.md)
+        - You also confirm that you have searched the [open bugs](https://github.com/Bostanabad-Research-Group/GP-Plus/issues) and have found no duplicates for this request
+
+  - type: dropdown
+    id: new_or_improvement
+    attributes:
+      label: Is this a new feature, an improvement, or a change to existing functionality?
+      options:
+        - New Feature
+        - Improvement
+        - Change
+    validations:
+      required: true
+
+  - type: textarea
+    id: Description
+    attributes:
+      label: Describe the feature
+      description: Please provide a complete description of the problem you want to solve with a new feature. Describe any alternatives you have considered.
+      placeholder: Tell us what you see!
+    validations:
+      required: true

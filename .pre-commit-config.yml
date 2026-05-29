@@ -1,0 +1,7 @@
+- repo: https://github.com/pre-commit/mirrors-isort
+  rev: v5.12.0  # Check for the latest version on https://github.com/pre-commit/mirrors-isort
+  hooks:
+    - id: isort
+      name: isort
+      language: python
+      types: [python]
