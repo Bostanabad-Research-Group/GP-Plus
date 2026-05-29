@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpplus"
+version = "0.0.6"
+description = "Python library for Generalized Gaussian Process Modeling"
+readme = "README.md" # optional
+authors = [{ name = "PMACS Lab", email = "raminb@uci.edu" }]
+license = { file = "LICENSE" } # optional
+dependencies = [
+    "gpytorch>=1.14",
+    "linear_operator>=0.6",
+    "joblib>=1.4.2",
+    "matplotlib>=3.10.1",
+    "numpy>=2.2.4",
+    "torch>=2.5.1",
+    "tqdm>=4.67.1",
+] # Add your dependencies here
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.ruff]
+# Global settings (e.g., line length, exclude, etc.)
+line-length = 120
+
+[tool.ruff.lint]
+# Enable flake8/pycodestyle (`E`), Pyflakes (`F`), flake8-bandit (`S`),
+# isort (`I`), and performance 'PERF' rules.
+select = ["E", "F", "S", "I", "PERF"]
+fixable = ["I"]
+
+[tool.ruff.lint.per-file-ignores]
+# Enable flake8/pycodestyle (`E`), Pyflakes (`F`), flake8-bandit (`S`),
+# isort (`I`), and performance 'PERF' rules.
+"__init__.py" = ["F401"]
+"docs/*.py" = ["F401"]
+# Ignore `S101` (assertions) in all `test` files.
+"test/*.py" = ["S101"]
