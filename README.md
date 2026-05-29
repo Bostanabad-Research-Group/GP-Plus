@@ -1,77 +1,50 @@
-# GP+
----
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+# gpplus
 
-[![Python Version](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/)
-[![Conda](https://img.shields.io/conda/v/gpytorch/gpytorch.svg)](https://anaconda.org/gpytorch/gpytorch)
-[![PyPI](https://img.shields.io/pypi/v/gpytorch.svg)](https://pypi.org/project/gpytorch)
+GPPlus library
 
-Python Library for Generalized Gaussian Process Modeling
+## Overview
 
+GPPlus is a Python library that provides generalized Gaussian Process modeling. This repository contains the source code and documentation for the library.
 
-# Installation
+## Installation
 
-**Requirements**:
-- Python == 3.9
-- CUDA >= 11.6 (if using GPU)
+To install the package, follow these steps:
 
-To use GP+, you first need to install the specific versions of PyTorch. The installation process involves two steps: (1) installing the specific version of PyTorch based on your system, and (2) installing GP+.
+1. Clone the repository:
 
-## (1) Install PyTorch
+   git clone https://github.com/Bostanabad-Research-Group/gp-private.git
 
-### For macOS
-To install PyTorch for macOS, use:
+2. Navigate to the gp-private directory:
 
-```bash
-pip install torch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1
-```
+   cd gp-private
 
-### For Linux and Windows
-To install PyTorch for Linux and Windows, follow the steps below based on whether you have CUDA support or not.
+3. Install the package using pip:
 
-#### For GPU Support (with CUDA)
-If you have a compatible GPU and want to leverage GPU acceleration, install PyTorch with CUDA support:
+   pip install .
 
-```bash
-pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
-```
+## Usage
 
-#### For CPU Only
-If you do not have a compatible GPU, install the CPU-only version of PyTorch:
+After installation, you can import and use the library in your Python scripts. For example:
 
-```bash
-pip install torch==1.13.1+cpu torchvision==0.14.1+cpu torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cpu
-```
+import gpplus  # or the appropriate module name
+''' Your code here using gpplus '''
 
-## (2) Install GP+
-Once you have installed the appropriate version of PyTorch, install GP+ using pip:
+## Contributing
 
-```bash
-pip install gpplus
-```
+We welcome contributions from the community! Please, check our [contributing guideline](CONTRIBUTING.md).
 
-
-# More About GP+
+## More About GP+
 
 GP+ is an open-source library for kernel-based learning via Gaussian processes (GPs). It systematically integrates nonlinear manifold learning techniques with GPs for single and multi-fidelity emulation, calibration of computer models, sensitivity analysis, and Bayesian optimization. GP+ is built on PyTorch and provides a user-friendly and object-oriented tool for probabilistic learning and inference. 
 
 For more detailed information, refer to our paper: ["GP+: A Python Library for Kernel-based Learning via Gaussian Processes"](https://www.sciencedirect.com/science/article/pii/S0965997824000930?dgcid=author).
 
-
-## The Team
-Amin Yousefpour\
-Zahra Zanjani Foumani\
-Mehdi Shishehbor\
-Carlos Mora\
-Ramin Bostanabad
-
-
 ## Citing Us
 If you use GP+ in your work, please use the following citation:
-
+```
 Yousefpour, Amin; Zanjani Foumani, Zahra; Shishehbor, Mehdi; Mora, Carlos; Bostanabad, Ramin. "GP+: A Python Library for Kernel-based Learning via Gaussian Processes." Advances in Engineering Software (2024). https://doi.org/10.1016/j.advengsoft.2024.103686.
+```
 
+## License
 
-
-## Assistance and Support
-Need help with GP+? Feel free to open an issue on our GitHub page and label it according to the module or feature in question for quicker assistance.
+MIT License

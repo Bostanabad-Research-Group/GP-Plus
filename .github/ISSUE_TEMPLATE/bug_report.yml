@@ -1,0 +1,21 @@
+name: Bug Report
+description: File a bug report for GPPlus.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report for GPPlus!
+        - By submitting this issue, you agree to follow our [Contributing guide](https://github.com/Bostanabad-Research-Group/GP-Plus/blob/main/CONTRIBUTING.md)
+        - You also confirm that you have searched the [open bugs](https://github.com/Bostanabad-Research-Group/GP-Plus/issues) and have found no duplicates for this request
+
+  - type: textarea
+    id: Description
+    attributes:
+      label: Describe the issue
+      description: Please provide a complete description of the problem, including what did you expect to happen.
+      placeholder: Tell us what you see!
+    validations:
+      required: true

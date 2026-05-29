@@ -1,0 +1,59 @@
+name: CI Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main  # Runs when a PR is opened against 'main'
+
+jobs:
+  lint:
+    name: Lint with Ruff
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Fetches the code
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"  # Adjust based on your project
+
+      - name: Install Ruff
+        run: pip install ruff
+
+      - name: Run Ruff Linter
+        run: ruff check .
+
+      - name: Run Ruff Formatter
+        run: ruff format .
+
+      - name: Check if formatting was applied
+        run: git diff --exit-code
+        continue-on-error: false  # Fail if there are uncommitted changes
+
+  test:
+    name: Run Tests with Coverage
+    runs-on: ubuntu-latest
+    needs: lint  # Run tests only if linting passes
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # Install project dependencies
+          pip install .  # Install the package itself
+          pip install pytest pytest-cov  # Install pytest and coverage tool
+
+      - name: Run Unit Tests with Coverage
+        run: pytest --cov=gpplus --cov-report=term-missing test/unit
+
+      - name: Run Integration Tests with Coverage
+        run: pytest --cov=gpplus --cov-report=term-missing test/integration
