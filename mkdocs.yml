@@ -88,7 +88,7 @@ nav:
     - Kernels:
       - Unconstrained: reference/kernels/unconstrained.md
       - Advanced: reference/kernels/advanced.md
-      - Kronecker: reference/kernels/kronecker.md
+      - MVMF: reference/kernels/mvmf.md
     - Models:
       - Base: reference/models/base.md
     - Training:
