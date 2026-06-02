@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gpplus"
-version = "0.0.6"
+version = "0.1.0"
 description = "Python library for Generalized Gaussian Process Modeling"
 readme = "README.md" # optional
 authors = [{ name = "PMACS Lab", email = "raminb@uci.edu" }]
