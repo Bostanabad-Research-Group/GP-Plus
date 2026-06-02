@@ -40,13 +40,10 @@ plugins:
   - search
   - autorefs
   - mkdocs-jupyter
-  - include-markdown:
-      include:
-        - 'CONTRIBUTING.md'
+  - include-markdown
   - mkdocstrings:
       handlers:
         python:
-          #docstring_style: "google"  # or "numpy" or "sphinx"
           options:
             docstring_style: "google"
             inherited_members: true  # Allow looking up inherited methods
@@ -61,20 +58,11 @@ plugins:
             show_docstring_attributes: true
             show_docstring_returns: true
             show_docstring_raises: true
-            show_source: true  # don't include source code
+            show_source: true  # include source code
             show_bases: true
-            show_inheritance: true
-            show_private_members: false
-            show_inherited_members: false
-            show_special_members: false
-            members_order: source  # order methods according to their order of definition in the source code, not alphabetical order
+            members_order: source  # order methods according to their order of definition in the source code
             heading_level: 4
             show_symbol_type_heading: true
-            #members: true
-            #filters:
-            #  - "!^__"
-            #  - "!^import"
-            #  - "!^_"
 
 nav:
   - Welcome to GPPlus: "index.md"
@@ -85,6 +73,7 @@ nav:
   - API Reference:
     - Means:
       - Advanced: reference/means/advanced.md
+      - MultiMean: reference/means/multi_mean.md
     - Kernels:
       - Unconstrained: reference/kernels/unconstrained.md
       - Advanced: reference/kernels/advanced.md
@@ -101,4 +90,4 @@ nav:
 
 repo_url: https://github.com/Bostanabad-Research-Group/GP-Plus
 
-copyright: Copyright &copy; 2025 Bostanabad Research Group
+copyright: Copyright &copy; 2026 Bostanabad Research Group
