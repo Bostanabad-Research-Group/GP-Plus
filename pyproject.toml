@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Python library for Generalized Gaussian Process Modeling"
 readme = "README.md" # optional
 authors = [{ name = "PMACS Lab", email = "raminb@uci.edu" }]
-license = { file = "LICENSE" } # optional
+license = "MIT"
 dependencies = [
     "gpytorch>=1.14",
     "linear_operator>=0.6",
@@ -18,6 +18,9 @@ dependencies = [
     "torch>=2.5.1",
     "tqdm>=4.67.1",
 ] # Add your dependencies here
+
+[tool.setuptools]
+license-files = []
 
 [tool.setuptools.packages.find]
 where = ["."]
