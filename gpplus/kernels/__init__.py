@@ -2,6 +2,7 @@
 from .advanced_kernels import (
     CompositeKernel,
     CompositeScaleKernel,
+    CosineKernel,
     CoshKernel,
     ExponentialKernel,
     GibbsKernel,
@@ -12,6 +13,7 @@ from .advanced_kernels import (
 
 from .unconstrained_kernel import UnconstrainedKernel
 from .gaussian_kernel import GaussianKernel
+from .periodic_kernel import PeriodicKernel
 from .kronecker import KroneckerKernel
 from .power_exponential_kernel import (
     PowerExponentialKernel,

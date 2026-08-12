@@ -21,6 +21,8 @@ def get_parameter_type(name: str, param: torch.Tensor) -> str:
         return "projection_matrix"
     if "raw_lengthscale" in name:
         return "raw_lengthscale"
+    if "raw_period" in name:
+        return "raw_period"
     if "raw_outputscale" in name:
         return "raw_outputscale"
     if "raw_noise" in name:
@@ -98,6 +100,16 @@ def get_initialization_config(
             "mean": -2.0,
             "std": 2.0,
             "description": f"Lengthscale parameter {'(ARD)' if is_ard else '(single)'} - log scale",
+        }
+    if param_type == "raw_period":
+        # Matches PeriodicKernel / CosineKernel SoftClamp log10(period) in [-1, 1]
+        # (physical periods roughly in [0.1, 10]).
+        is_ard = param.dim() >= 2 and param.shape[-1] > 1
+        return {
+            "method": "uniform",
+            "lower": -1.0,
+            "upper": 1.0,
+            "description": f"Period parameter {'(ARD)' if is_ard else '(single)'} - log10 scale",
         }
     if param_type == "raw_outputscale":
         return {

@@ -1,8 +1,14 @@
+import math
+from typing import Optional
+
 import torch
 from gpytorch.kernels import Kernel
+from gpytorch.priors import Prior
 
 # from linear_operator.operators import DenseLinearOperator  # Convert tensors back to LazyTensor
+from ..constraints import SoftClamp
 from ..utils import InputTransformNet
+from .unconstrained_kernel import UnconstrainedKernel
 
 ################################
 
@@ -319,3 +325,91 @@ class CoshKernel(Kernel):
         dense_base = base_output.to_dense()
 
         return torch.cosh(dense_base)  # Apply cosh function; GPyTorch will lazily wrap this
+
+
+class CosineKernel(UnconstrainedKernel):
+    r"""
+    Cosine kernel with base-10 log parameterization for the period.
+
+    Analogous to GPyTorch's :class:`~gpytorch.kernels.CosineKernel`, but uses the
+    hyperparameter name ``raw_period`` (not ``raw_period_length``) and the same
+    SoftClamp log10 convention as :class:`~gpplus.kernels.PeriodicKernel`:
+
+    .. math::
+
+        k(x, x') = \cos\!\Big(\pi \,\big\| \tfrac{x}{p} - \tfrac{x'}{p} \big\|\Big),
+        \qquad p = 10^{\,\text{period}}.
+
+    Unlike :class:`~gpplus.kernels.PeriodicKernel`, this kernel has no lengthscale.
+    """
+
+    has_lengthscale = False
+    is_stationary = True
+
+    def __init__(
+        self,
+        period_prior: Optional[Prior] = None,
+        period_constraint: Optional[SoftClamp] = None,
+        **kwargs,
+    ):
+        super().__init__(**kwargs)
+
+        # Default: allow log10(period) in roughly [1e-1, 1e1] (periods from 0.1 to 10)
+        if period_constraint is None:
+            period_constraint = SoftClamp(lower_bound=-1.0, upper_bound=1.0, margin=1e-2)
+
+        period_num_dims = 1 if self.ard_num_dims is None else self.ard_num_dims
+
+        # raw_period lives in unconstrained space; after SoftClamp it is log10(period).
+        self.register_parameter(
+            name="raw_period",
+            parameter=torch.nn.Parameter(torch.zeros(*self.batch_shape, 1, period_num_dims)),
+        )
+
+        if period_prior is not None:
+            if not isinstance(period_prior, Prior):
+                raise TypeError("Expected gpytorch.priors.Prior but got " + type(period_prior).__name__)
+            self.register_prior(
+                "period_prior",
+                period_prior,
+                self._period_param,
+                self._period_closure,
+            )
+
+        self.register_constraint("raw_period", period_constraint)
+
+    def _period_param(self, m):
+        return m.period
+
+    def _period_closure(self, m, v):
+        m._set_period(v)
+
+    @property
+    def period(self):
+        log10_period = self.raw_period_constraint.transform(self.raw_period)
+        return torch.pow(10.0, log10_period)
+
+    @period.setter
+    def period(self, value):
+        self._set_period(value)
+
+    def _set_period(self, value):
+        if not torch.is_tensor(value):
+            value = torch.as_tensor(value).to(self.raw_period)
+        if torch.any(value <= 0):
+            raise ValueError("period must be strictly positive.")
+
+        log10_value = torch.log10(value)
+        self.initialize(raw_period=self.raw_period_constraint.inverse_transform(log10_value))
+
+    def forward(self, x1, x2, diag: bool = False, **params):
+        period = self.period  # (*batch, 1, D_p)
+
+        D = x1.size(-1)
+        if period.shape[-1] == 1 and D > 1:
+            period = period.expand(*period.shape[:-1], D)
+
+        x1_ = x1.div(period)
+        x2_ = x2.div(period)
+        diff = self.covar_dist(x1_, x2_, diag=diag, **params)
+        return torch.cos(diff.mul(math.pi))
